@@ -1,5 +1,4 @@
 // tailwind.config.js
-const { orange, lime } = require("tailwindcss/colors");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
@@ -16,11 +15,13 @@ module.exports = {
         black: "0.5rem 1rem 0 0"
       },
       backgroundSize: {
-        "pattern-50": "50px 50px"
+        "pattern-50": "50px 50px",
+        "pattern-10": "calc(10 * 1px) calc(10 * 1px)"
       },
       backgroundImage: {
         "line-pattern":
-          "repeating-linear-gradient(to right, #dddddd, #dddddd 1px, transparent 1px, transparent)"
+          "repeating-linear-gradient(to right, #dddddd, #dddddd 1px, transparent 1px, transparent)",
+        "dots-pattern": "radial-gradient(#000000 1px, transparent 1px)"
       }
     },
     screens: {
@@ -919,5 +920,25 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus"]
   },
-  plugins: []
+  plugins: [
+    function({ addComponents }) {
+      addComponents({
+        ".container": {
+          maxWidth: "100%",
+          "@screen sm": {
+            maxWidth: "640px"
+          },
+          "@screen md": {
+            maxWidth: "768px"
+          },
+          "@screen lg": {
+            maxWidth: "1280px"
+          },
+          "@screen xl": {
+            maxWidth: "1400px"
+          }
+        }
+      });
+    }
+  ]
 };

@@ -14,7 +14,7 @@
           v-for="(value, index) in pokemon.types"
           :key="`${value}-${index}`"
           :class="
-            `inline-flex px-3 py-1 mx-1 text-xs font-bold text-center text-white bg-black rounded-xl ${value.type.name}`
+            `inline-flex px-2 py-1 mx-1 text-xs font-bold text-center text-white bg-black rounded-xl ${value.type.name}`
           "
         >
           {{ value.type.name }}
@@ -39,15 +39,17 @@ export default {
       pokemonImgUrl: ""
     };
   },
-  watch: {},
   mounted() {
     this.loadPokemonData(this.index);
   },
   methods: {
-    async loadPokemonData(id) {
-      const res = await fetchPokemonData(id);
-      this.pokemon = res;
-      this.pokemonImgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${res.id}.png`;
+    loadPokemonData(id) {
+      fetchPokemonData(id)
+        .then(res => {
+          this.pokemon = res;
+          this.pokemonImgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${res.id}.png`;
+        })
+        .catch(error => console.log(error));
     }
   }
 };

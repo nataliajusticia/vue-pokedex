@@ -45,9 +45,13 @@ export default {
     this.loadPokemonData(this.$route.params.id);
   },
   methods: {
-    async loadPokemonData(id) {
-      const res = await fetchPokemonData(id);
-      this.pokemon = res;
+    loadPokemonData(id) {
+      fetchPokemonData(id)
+        .then(res => {
+          this.pokemon = res;
+          this.pokemonImgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${res.id}.png`;
+        })
+        .catch(error => console.log(error));
     }
   }
 };

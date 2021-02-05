@@ -1,21 +1,13 @@
 <template>
   <section>
     <div class="flex justify-center my-8">
-      <h1
-        class="p-4 text-5xl text-center bg-white rounded-lg shadow-lg font-poppins"
-      >
-        Pokémon Pokédex
-      </h1>
-    </div>
-
-    <div class="flex justify-center">
-      <input
-        type="text"
-        name="search"
-        v-model="search"
-        placeholder="Search pokemon ..."
-        class="w-full p-4 border-transparent rounded-lg shadow-sm md:w-7/12 focus:outline-none focus:ring-4 focus:ring-black focus:border-transparent"
-      />
+      <div class="rounded-lg bg-pattern-10 bg-dots-pattern">
+        <h1
+          class="p-4 text-5xl text-center transform translate-x-4 -translate-y-4 bg-white rounded-lg shadow-lg font-poppins"
+        >
+          Pokémon Pokédex
+        </h1>
+      </div>
     </div>
 
     <PokemonList :pokedex="pokedex" v-if="pokedex" />
@@ -33,25 +25,19 @@ export default {
   },
   data() {
     return {
-      pokedex: null,
-      pokedexFilter: null,
-      search: ""
+      pokedex: null
     };
   },
   mounted() {
     this.loadKantoPokemon();
   },
-  computed: {
-    filteredPokemon() {
-      return this.pokedex.filter(pokemon => {
-        return pokemon.name.match(this.search);
-      });
-    }
-  },
   methods: {
-    async loadKantoPokemon() {
-      const res = await fetchKantoPokemon();
-      this.pokedex = res.results;
+    loadKantoPokemon() {
+      fetchKantoPokemon()
+        .then(res => {
+          this.pokedex = res.results;
+        })
+        .catch(error => console.log(error));
     }
   }
 };
