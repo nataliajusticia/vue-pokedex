@@ -1,7 +1,7 @@
 <template>
   <div
     id="app"
-    class="flex flex-col min-h-screen bg-gray-200 pattern-vertical-lines"
+    class="flex flex-col min-h-screen bg-gray-100 bg-line-pattern bg-pattern-50"
   >
     <main class="container p-8 pb-40 mx-auto">
       <router-view />

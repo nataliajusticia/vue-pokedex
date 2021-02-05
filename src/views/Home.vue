@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="flex justify-center m-8">
+    <div class="flex justify-center my-8">
       <h1
         class="p-4 text-5xl text-center bg-white rounded-lg shadow-lg font-poppins"
       >
@@ -8,39 +8,33 @@
       </h1>
     </div>
 
-    <input
-      type="text"
-      name="search"
-      v-model="search"
-      placeholder="Search pokemon ..."
-    />
-
-    <div
-      class="grid grid-cols-1 gap-16 pt-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5"
-      v-if="pokedex.length"
-    >
-      <PokemonCard
-        v-for="(pokemon, index) in filteredPokemon"
-        :key="index + 1"
-        :index="index + 1"
+    <div class="flex justify-center">
+      <input
+        type="text"
+        name="search"
+        v-model="search"
+        placeholder="Search pokemon ..."
+        class="w-full p-4 border-transparent rounded-lg shadow-sm md:w-7/12 focus:outline-none focus:ring-4 focus:ring-black focus:border-transparent"
       />
     </div>
+
+    <PokemonList :pokedex="pokedex" v-if="pokedex" />
   </section>
 </template>
 
 <script>
-// @ is an alias to /src
-import PokemonCard from "@/components/PokemonCard";
 import { fetchKantoPokemon } from "@/services/api.js";
+import PokemonList from "@/components/Pokemon/PokemonList";
 
 export default {
   name: "Home",
   components: {
-    PokemonCard
+    PokemonList
   },
   data() {
     return {
-      pokedex: [],
+      pokedex: null,
+      pokedexFilter: null,
       search: ""
     };
   },

@@ -1,8 +1,28 @@
+// tailwind.config.js
+const { orange, lime } = require("tailwindcss/colors");
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   purge: ["./src/**/*.vue"],
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    // Extending the default theme
+    extend: {
+      borderWidth: {
+        5: "5px"
+      },
+      boxShadow: {
+        black: "0.5rem 1rem 0 0"
+      },
+      backgroundSize: {
+        "pattern-50": "50px 50px"
+      },
+      backgroundImage: {
+        "line-pattern":
+          "repeating-linear-gradient(to right, #dddddd, #dddddd 1px, transparent 1px, transparent)"
+      }
+    },
     screens: {
       sm: "640px",
       md: "768px",
@@ -13,9 +33,20 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      black: "#000000",
-      white: "#ffffff",
-      grey: "#6B7280"
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      red: colors.red,
+      yellow: colors.amber,
+      green: colors.emerald,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.violet,
+      pink: colors.pink,
+      orange: colors.orange,
+      brown: colors.warmGray,
+      lime: colors.lime,
+      "light-blue": colors.lightBlue
     },
     spacing: {
       px: "1px",
@@ -114,7 +145,6 @@ module.exports = {
       0: "0px",
       2: "2px",
       4: "4px",
-      5: "5px",
       8: "8px"
     },
     boxShadow: {
@@ -129,8 +159,7 @@ module.exports = {
         "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
       inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-      none: "none",
-      black: "0.5rem 1rem 0 0"
+      none: "none"
     },
     container: {},
     cursor: {

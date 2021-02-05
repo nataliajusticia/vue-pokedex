@@ -6,15 +6,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Pattern */
-.pattern-vertical-lines {
-  background-color: #f4f4f6;
-  background-image: repeating-linear-gradient(
-    to right,
-    #dddddd,
-    #dddddd 1px,
-    transparent 1px,
-    transparent
-  ) !important;
-  background-size: 50px 50px;
+/* Pokemon types */
+.grass {
+  @apply bg-lime-600;
+}
+
+.poison {
+  @apply bg-purple-500;
+}
+
+.fire {
+  @apply bg-orange-500;
+}
+
+.water {
+  @apply bg-blue-500;
+}
+
+.normal {
+  @apply bg-gray-500;
+}
+
+.ground {
+  @apply bg-brown-500;
+}
+
+.fairy {
+  @apply bg-pink-500;
+}
+
+.electric {
+  @apply bg-yellow-300;
+}
+
+.bug {
+  @apply bg-lime-700;
+}
+
+.flying {
+  @apply bg-blue-300;
+}
+
+.fighting {
+  @apply bg-red-500;
+}
+
+.psychic {
+  @apply bg-red-900;
+}
+
+.steel {
+  @apply bg-gray-600;
+}
+
+.ice {
+  @apply bg-light-blue-200;
+}
+
+.rock {
+  @apply bg-yellow-900;
+}
+
+.ghost {
+  @apply bg-purple-900;
+}
+
+.dragon {
+  @apply bg-indigo-900;
 }

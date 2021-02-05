@@ -4,7 +4,7 @@
       <h1
         class="p-4 text-5xl text-center bg-white rounded-lg shadow-lg font-poppins"
       >
-        {{ pokemonData.name }}
+        {{ pokemon.name }}
       </h1>
     </div>
 
@@ -15,20 +15,15 @@
     <div
       class="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg"
     >
-      <img
-        :src="pokemonImgUrl"
-        :alt="pokemonData.name"
-        width="96px"
-        height="96"
-      />
+      <img :src="pokemonImgUrl" :alt="pokemon.name" width="96px" height="96" />
 
       <span class="px-3 text-xs font-bold text-white bg-black rounded-xl">
-        #{{ pokemonData.id }}
+        #{{ pokemon.id }}
       </span>
 
       <div class="my-4">
-        <p>Weight: {{ pokemonData.weight }}</p>
-        <p>Height: {{ pokemonData.height }}</p>
+        <p>Weight: {{ pokemon.weight }}</p>
+        <p>Height: {{ pokemon.height }}</p>
       </div>
     </div>
   </section>
@@ -41,7 +36,7 @@ export default {
   name: "PokemonDetail",
   data() {
     return {
-      pokemonData: [],
+      pokemon: [],
       pokemonImgUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.$route.params.id}.png`,
       pokemonId: this.$route.params.id || ""
     };
@@ -52,7 +47,7 @@ export default {
   methods: {
     async loadPokemonData(id) {
       const res = await fetchPokemonData(id);
-      this.pokemonData = res;
+      this.pokemon = res;
     }
   }
 };
