@@ -3,7 +3,10 @@
     <div
       class="fixed top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center p-8 bg-white bg-opacity-95"
     >
-      <button class="absolute top-0 right-0 p-8" @click="closeModal">
+      <button
+        class="absolute top-8 right-8 focus:outline-black"
+        @click="closeModal"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
