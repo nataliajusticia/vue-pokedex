@@ -1,14 +1,15 @@
 <template>
-  <router-link :to="{ name: 'Pokemon', params: { id: index } }">
+  <div>
     <article
+      @click="showModal = true"
       v-if="pokemon"
-      class="flex flex-col items-center p-8 transition duration-500 ease-in-out bg-white border-transparent rounded-lg shadow-lg border-5 hover:border-black hover:border-5 hover:shadow-black"
+      class="flex flex-col items-center p-8 transition duration-500 ease-in-out bg-white border-transparent rounded-lg shadow-lg cursor-pointer border-5 hover:border-black hover:border-5 hover:shadow-black"
     >
       <img :src="pokemonImgUrl" :alt="pokemon.name" width="96px" height="96" />
       <span class="px-3 text-xs font-bold text-white bg-black rounded-xl">
         #{{ pokemon.id }}
       </span>
-      <h3 class="my-3 text-xl font-poppins">{{ pokemon.name }}</h3>
+      <h2 class="my-3 text-xl font-poppins">{{ pokemon.name }}</h2>
       <div>
         <span
           v-for="(value, index) in pokemon.types"
@@ -21,14 +22,24 @@
         </span>
       </div>
     </article>
-  </router-link>
+
+    <PokemonModal
+      v-if="showModal"
+      @closeModal="showModal = false"
+      :pokemon="pokemon"
+    />
+  </div>
 </template>
 
 <script>
 import { fetchPokemonData } from "@/services/api.js";
+import PokemonModal from "@/components/Pokemon/PokemonModal";
 
 export default {
   name: "Pokemon",
+  components: {
+    PokemonModal
+  },
   props: {
     pokedex: Array,
     index: Number
@@ -36,7 +47,8 @@ export default {
   data() {
     return {
       pokemon: null,
-      pokemonImgUrl: ""
+      pokemonImgUrl: "",
+      showModal: false
     };
   },
   mounted() {
