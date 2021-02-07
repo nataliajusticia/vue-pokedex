@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
     <div
-      class="fixed top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center p-8 bg-white bg-opacity-95"
+      class="fixed top-0 bottom-0 left-0 right-0 z-10 flex flex-col items-center justify-center p-8 bg-white bg-opacity-95"
     >
       <button
         class="absolute top-8 right-8 focus:outline-black"
@@ -9,8 +9,8 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="32"
+          height="32"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

@@ -7,15 +7,19 @@
       <router-view />
     </main>
 
+    <BackTop />
+
     <Footer />
   </div>
 </template>
 
 <script>
+import BackTop from "@/components/BackTop";
 import Footer from "@/components/Footer";
 
 export default {
   components: {
+    BackTop,
     Footer
   }
 };
