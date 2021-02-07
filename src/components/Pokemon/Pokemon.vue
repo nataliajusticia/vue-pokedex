@@ -41,7 +41,6 @@ export default {
     PokemonModal
   },
   props: {
-    pokedex: Array,
     index: Number
   },
   data() {

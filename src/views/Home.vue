@@ -10,6 +10,8 @@
       </div>
     </div>
 
+    <Spinner v-if="isLoading" />
+
     <PokemonList :pokedex="pokedex" v-if="pokedex" />
   </section>
 </template>
@@ -17,15 +19,18 @@
 <script>
 import { fetchKantoPokemon } from "@/services/api.js";
 import PokemonList from "@/components/Pokemon/PokemonList";
+import Spinner from "@/components/Spinner";
 
 export default {
   name: "Home",
   components: {
-    PokemonList
+    PokemonList,
+    Spinner
   },
   data() {
     return {
-      pokedex: null
+      pokedex: null,
+      isLoading: true
     };
   },
   mounted() {
@@ -36,6 +41,7 @@ export default {
       fetchKantoPokemon()
         .then(res => {
           this.pokedex = res.results;
+          this.isLoading = false;
         })
         .catch(error => console.log(error));
     }

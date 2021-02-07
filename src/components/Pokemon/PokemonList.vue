@@ -6,7 +6,6 @@
       v-for="(pokemon, index) in pokedex"
       :key="`pokemon-${index}`"
       :index="index + 1"
-      :pokedex="pokedex"
     />
   </div>
 </template>
