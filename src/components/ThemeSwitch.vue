@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "DarkModeSwitch",
+  name: "ThemeSwitch",
   data() {
     return {
       theme: localStorage.getItem("theme")
