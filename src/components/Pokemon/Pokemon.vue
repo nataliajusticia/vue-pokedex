@@ -3,10 +3,12 @@
     <article
       @click="showModal = true"
       v-if="pokemon"
-      class="flex flex-col items-center p-8 transition duration-500 ease-in-out bg-white border-transparent rounded-lg shadow-lg cursor-pointer border-5 hover:border-black hover:border-5 hover:shadow-black"
+      class="flex flex-col items-center p-8 transition duration-500 ease-in-out bg-white border-transparent rounded-lg shadow-lg cursor-pointer border-5 hover:border-black hover:border-5 hover:shadow-black dark:hover:border-white dark:bg-black-light dark:text-white"
     >
       <img :src="pokemonImgUrl" :alt="pokemon.name" width="96px" height="96" />
-      <span class="px-3 text-xs font-bold text-white bg-black rounded-xl">
+      <span
+        class="px-3 text-xs font-bold text-white bg-black rounded-xl dark:bg-white dark:text-black-light"
+      >
         #{{ pokemon.id }}
       </span>
       <h2 class="my-3 text-xl font-poppins">{{ pokemon.name }}</h2>

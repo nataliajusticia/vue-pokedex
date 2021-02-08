@@ -4,7 +4,7 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   purge: ["./src/**/*.vue"],
   presets: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     // Extending the default theme
     extend: {
@@ -12,7 +12,7 @@ module.exports = {
         5: "5px"
       },
       boxShadow: {
-        black: "0.5rem 1rem 0 0"
+        black: "0.5rem 1rem 0 0 #121212"
       },
       backgroundSize: {
         "pattern-50": "50px 50px",
@@ -21,7 +21,10 @@ module.exports = {
       backgroundImage: {
         "line-pattern":
           "repeating-linear-gradient(to right, #dddddd, #dddddd 1px, transparent 1px, transparent)",
-        "dots-pattern": "radial-gradient(#000000 1px, transparent 1px)"
+        "line-pattern-light":
+          "repeating-linear-gradient(to right, #434343, #434343 1px, transparent 1px, transparent)",
+        "dots-pattern": "radial-gradient(#121212 1px, transparent 1px)",
+        "dots-pattern-light": "radial-gradient(#fff 1px, transparent 1px)"
       }
     },
     screens: {
@@ -34,7 +37,8 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      black: colors.black,
+      black: "#121212",
+      "black-light": "#272727",
       white: colors.white,
       gray: colors.gray,
       red: colors.red,
@@ -772,7 +776,7 @@ module.exports = {
       "hover",
       "focus"
     ],
-    backgroundImage: ["responsive"],
+    backgroundImage: ["responsive", "dark"],
     backgroundOpacity: [
       "responsive",
       "group-hover",
@@ -856,7 +860,7 @@ module.exports = {
     objectPosition: ["responsive"],
     opacity: ["responsive", "group-hover", "focus-within", "hover", "focus"],
     order: ["responsive"],
-    outline: ["responsive", "focus-within", "focus"],
+    outline: ["responsive", "focus-within", "focus", "dark"],
     overflow: ["responsive"],
     overscrollBehavior: ["responsive"],
     padding: ["responsive"],

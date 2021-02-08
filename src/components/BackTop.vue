@@ -2,7 +2,7 @@
   <a
     @click="scrollTop"
     v-show="visible"
-    class="fixed p-4 text-white transition duration-500 ease-in-out bg-black rounded-full shadow-lg cursor-pointer right-8 bottom-8"
+    class="fixed p-4 text-white transition duration-500 ease-in-out bg-black rounded-full shadow-lg cursor-pointer right-8 bottom-8 dark:bg-black-light"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

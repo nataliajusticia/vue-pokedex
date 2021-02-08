@@ -8,7 +8,11 @@
     </p>
 
     <div class="flex">
-      <a href="https://twitter.com/nataliajustice" target="_blank" class="mr-4">
+      <a
+        href="https://twitter.com/nataliajustice"
+        target="_blank"
+        class="mr-4 focus:outline-white"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -26,7 +30,11 @@
         </svg>
       </a>
 
-      <a href="https://github.com/nataliajusticia" target="_blank">
+      <a
+        href="https://github.com/nataliajusticia"
+        target="_blank"
+        class="focus:outline-white"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

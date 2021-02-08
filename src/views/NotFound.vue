@@ -1,9 +1,11 @@
 <template>
   <section>
     <div class="flex justify-center my-8">
-      <div class="rounded-lg bg-pattern-10 bg-dots-pattern">
+      <div
+        class="rounded-lg bg-pattern-10 bg-dots-pattern dark:bg-dots-pattern-light"
+      >
         <h1
-          class="p-4 text-5xl text-center transform translate-x-4 -translate-y-4 bg-white rounded-lg shadow-lg font-poppins"
+          class="p-4 text-5xl text-center transform translate-x-4 -translate-y-4 bg-white rounded-lg shadow-lg font-poppins dark:bg-black-light dark:text-white"
         >
           Error 404
         </h1>
@@ -11,7 +13,7 @@
     </div>
 
     <div
-      class="flex flex-col items-center p-8 text-center bg-white border-transparent rounded-lg shadow-lg"
+      class="flex flex-col items-center p-8 text-center bg-white border-transparent rounded-lg shadow-lg dark:bg-black-light dark:text-white"
     >
       <img
         src="@/assets/images/pikachu-detective.png"
@@ -25,7 +27,7 @@
       </p>
       <router-link
         to="/"
-        class="w-40 p-4 text-white bg-black rounded-lg font-poppins focus:outline-black"
+        class="w-40 p-4 text-white bg-black rounded-lg font-poppins focus:outline-black dark:focus:outline-white dark:bg-white dark:text-black"
         >Home</router-link
       >
     </div>

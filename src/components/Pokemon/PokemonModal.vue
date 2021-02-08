@@ -1,10 +1,10 @@
 <template>
   <transition name="modal">
     <div
-      class="fixed top-0 bottom-0 left-0 right-0 z-10 flex flex-col items-center justify-center p-8 bg-white bg-opacity-95"
+      class="fixed top-0 bottom-0 left-0 right-0 z-10 flex flex-col items-center justify-center p-8 bg-white bg-opacity-95 dark:bg-black dark:text-white"
     >
       <button
-        class="absolute top-8 right-8 focus:outline-black"
+        class="absolute top-8 right-8 focus:outline-black dark:focus:outline-white"
         @click="closeModal"
       >
         <svg

@@ -1,9 +1,11 @@
 <template>
   <section>
     <div class="flex justify-center my-8">
-      <div class="rounded-lg bg-pattern-10 bg-dots-pattern">
+      <div
+        class="rounded-lg bg-pattern-10 bg-dots-pattern dark:bg-dots-pattern-light"
+      >
         <h1
-          class="p-4 text-5xl text-center transform translate-x-4 -translate-y-4 bg-white rounded-lg shadow-lg font-poppins"
+          class="p-4 text-5xl text-center transform translate-x-4 -translate-y-4 bg-white rounded-lg shadow-lg font-poppins dark:bg-black-light dark:text-white"
         >
           Pokémon Pokédex
         </h1>
