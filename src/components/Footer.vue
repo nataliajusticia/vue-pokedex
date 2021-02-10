@@ -11,6 +11,8 @@
       <a
         href="https://twitter.com/nataliajustice"
         target="_blank"
+        rel="noopener"
+        aria-label="My twitter account"
         class="mr-4 focus:outline-white"
       >
         <svg
@@ -33,6 +35,8 @@
       <a
         href="https://github.com/nataliajusticia"
         target="_blank"
+        rel="noopener"
+        aria-label="My github account"
         class="focus:outline-white"
       >
         <svg
