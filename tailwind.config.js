@@ -12,7 +12,8 @@ module.exports = {
         5: "5px"
       },
       boxShadow: {
-        black: "0.5rem 1rem 0 0 #121212"
+        black: "0.5rem 1rem 0 0 #121212",
+        white: "0.5rem 1rem 0 0 #fff"
       },
       backgroundSize: {
         "pattern-50": "50px 50px",
@@ -807,7 +808,14 @@ module.exports = {
     borderRadius: ["responsive"],
     borderStyle: ["responsive"],
     borderWidth: ["responsive", "hover"],
-    boxShadow: ["responsive", "group-hover", "focus-within", "hover", "focus"],
+    boxShadow: [
+      "responsive",
+      "group-hover",
+      "focus-within",
+      "hover",
+      "focus",
+      "dark"
+    ],
     boxSizing: ["responsive"],
     clear: ["responsive"],
     container: ["responsive"],

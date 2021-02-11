@@ -3,7 +3,7 @@
     <article
       @click="showModal = true"
       v-if="pokemon"
-      class="flex flex-col items-center p-8 transition duration-500 ease-in-out bg-white border-transparent rounded-lg shadow-lg cursor-pointer border-5 hover:border-black hover:border-5 hover:shadow-black dark:hover:border-white dark:bg-black-light dark:text-white"
+      class="flex flex-col items-center p-8 transition duration-500 ease-in-out bg-white border-transparent rounded-lg shadow-lg cursor-pointer border-5 hover:border-black hover:border-5 hover:shadow-black dark:hover:border-white dark:hover:shadow-white dark:bg-black-light dark:text-white"
     >
       <img :src="pokemonImgUrl" :alt="pokemon.name" width="96px" height="96" />
       <span
